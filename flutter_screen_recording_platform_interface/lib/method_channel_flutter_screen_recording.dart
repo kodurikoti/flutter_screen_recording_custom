@@ -41,4 +41,9 @@ class MethodChannelFlutterScreenRecording
     final String path = await _channel.invokeMethod('stopRecordScreen');
     return path;
   }
+
+  Future<String> get stopRecordScreenKeepService async {
+    final String path = await _channel.invokeMethod('stopRecordScreenKeepService');
+    return path;
+  }
 }
