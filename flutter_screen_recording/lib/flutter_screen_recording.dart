@@ -69,6 +69,17 @@ class FlutterScreenRecording {
     return "";
   }
 
+  static Future<String> stopRecordScreenKeepService() async {
+    try {
+      final String path = await FlutterScreenRecordingPlatform.instance.stopRecordScreenKeepStatic;
+      return path;
+    } catch (err) {
+      print("stopRecordScreen err");
+      print(err);
+    }
+    return "";
+  }
+
   static _maybeStartFGS(String titleNotification, String messageNotification) {
     try {
       if (!kIsWeb && Platform.isAndroid) {
