@@ -104,6 +104,7 @@ class FlutterScreenRecording {
             // interval: 5000,
             autoRunOnBoot: true,
             allowWifiLock: true,
+            eventAction: ForegroundTaskEventAction.none,
           ),
         );
       }
