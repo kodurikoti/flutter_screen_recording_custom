@@ -12,8 +12,21 @@ dependencies:
     sdk: flutter
   flutter_foreground_task: ^8.1.0
 #  flutter_screen_recording_platform_interface: ^1.0.3
+
   flutter_screen_recording_platform_interface:
-    path: ../flutter_screen_recording_platform_interface/
+    git:
+      url: https://github.com/kodurikoti/flutter_screen_recording_custom.git
+      path: flutter_screen_recording_platform_interface
+      ref: IA-3588
+
+#  flutter_screen_recording_platform_interface:
+#    path: ../flutter_screen_recording_platform_interface/
+
+  flutter_screen_recording_web:
+    git:
+      url: https://github.com/kodurikoti/flutter_screen_recording_custom.git
+      path: flutter_screen_recording_web
+      ref: IA-3588
 #  flutter_screen_recording_web: ^1.0.8
 #  flutter_screen_recording_web:
 #    path: ../flutter_screen_recording_web/
