@@ -144,7 +144,7 @@ public class SwiftFlutterScreenRecordingPlugin: NSObject, FlutterPlugin {
             return
         }
         isRecording = false
-        if #available(iOS 11.0, *) {
+        if #available(iOS 11.0, *), recorder.isRecording {
             recorder.stopCapture { [weak self] error in
                 guard let self = self else { return }
                 
