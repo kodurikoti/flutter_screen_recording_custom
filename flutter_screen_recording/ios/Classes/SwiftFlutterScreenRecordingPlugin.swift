@@ -143,7 +143,6 @@ public class SwiftFlutterScreenRecordingPlugin: NSObject, FlutterPlugin {
             result(FlutterError(code: "NOT_RECORDING", message: "No recording in progress", details: nil))
             return
         }
-
         isRecording = false
         if #available(iOS 11.0, *), recorder.isRecording {
             recorder.stopCapture { [weak self] error in
