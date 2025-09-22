@@ -55,6 +55,41 @@ class FlutterScreenRecording {
     return false;
   }
 
+  static Future<bool> startRecordScreenAgain(String name, {String? titleNotification, String? messageNotification}) async {
+    try {
+      if (titleNotification == null) {
+        titleNotification = "";
+      }
+      if (messageNotification == null) {
+        messageNotification = "";
+      }
+
+      // await _maybeStartFGS(titleNotification, messageNotification);
+      if(Platform.isAndroid) {
+        final bool start = await FlutterScreenRecordingPlatform.instance.startRecordScreen(
+          name,
+          notificationTitle: titleNotification,
+          notificationMessage: messageNotification,
+        );
+        return start;
+      }else{
+        final bool start = await FlutterScreenRecordingPlatform.instance.startRecordScreenAgain(
+          name,
+          notificationTitle: titleNotification,
+          notificationMessage: messageNotification,
+        );
+
+        return start;
+      }
+    } catch (err) {
+      print("startRecordScreen err");
+      print(err);
+    }
+
+    return false;
+  }
+
+
   static Future<String> get stopRecordScreen async {
     try {
       final String path = await FlutterScreenRecordingPlatform.instance.stopRecordScreen;
